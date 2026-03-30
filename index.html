@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📚 运哥知识库</title>
+<style>
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --accent-light: #dbeafe;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --accent: #60a5fa;
+    --accent-light: #1e3a5f;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: #334155;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, 'Noto Sans SC', 'PingFang SC', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.container { max-width: 720px; margin: 0 auto; padding: 20px; }
+
+.header {
+  text-align: center;
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+.header h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.header .subtitle {
+  color: var(--muted);
+  font-size: 0.95em;
+}
+
+.category {
+  margin-bottom: 35px;
+}
+.category-title {
+  font-size: 1.05em;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
+}
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+}
+.card .title {
+  font-size: 1.05em;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.card .desc {
+  font-size: 0.88em;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.card .meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 0.78em;
+  color: var(--muted);
+}
+.card .tag {
+  display: inline-block;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8em;
+  padding: 40px 0 20px;
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .header { padding: 40px 0 30px; }
+  .header h1 { font-size: 1.5em; }
+  .card { padding: 16px 18px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>📚 运哥知识库</h1>
+    <div class="subtitle">实用指南 · 研究笔记 · 学习资源</div>
+  </div>
+
+  <!-- ========== 教育 & 培训 ========== -->
+  <div class="category">
+    <div class="category-title">🎓 教育 & 培训</div>
+
+    <a class="card" href="openclaw-teacher-guide.html">
+      <div class="title">🦞 AI 助教（小龙虾）教师培训指南</div>
+      <div class="desc">面向国际学校教师的 AI 助教系统完整培训手册，涵盖 IGCSE/A-Level 课程体系适配、课堂操作流程、学生管理策略</div>
+      <div class="meta">
+        <span class="tag">教师培训</span>
+        <span class="tag">AI 教育</span>
+        <span>2026-03-30</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- ========== 学习 & 成长 ========== -->
+  <!--
+  <div class="category">
+    <div class="category-title">📖 学习 & 成长</div>
+  </div>
+  -->
+
+  <!-- ========== 商业 & 洞察 ========== -->
+  <!--
+  <div class="category">
+    <div class="category-title">💡 商业 & 洞察</div>
+  </div>
+  -->
+
+  <div class="footer">
+    © 2026 运哥知识库
+  </div>
+
+</div>
+</body>
+</html>

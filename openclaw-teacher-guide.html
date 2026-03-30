@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw（小龙虾）IGCSE/A-Level 国际学校教师培训指南</title>
+<style>
+  :root {
+    --primary: #e53935;
+    --primary-light: #ff6f60;
+    --primary-dark: #ab000d;
+    --bg: #fafafa;
+    --card: #ffffff;
+    --text: #212121;
+    --text-secondary: #616161;
+    --border: #e0e0e0;
+    --accent-blue: #1565c0;
+    --accent-green: #2e7d32;
+    --accent-orange: #ef6c00;
+    --accent-purple: #6a1b9a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 0;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 2.2em; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 1.1em; opacity: 0.9; }
+  .hero .meta { margin-top: 16px; opacity: 0.7; font-size: 0.9em; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+  .toc {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toc h2 { font-size: 1.3em; margin-bottom: 12px; color: var(--primary); }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--accent-blue); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .section {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .section h2 {
+    font-size: 1.5em;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section h3 {
+    font-size: 1.2em;
+    margin: 20px 0 10px;
+    color: var(--primary-dark);
+  }
+  .section h4 {
+    font-size: 1.05em;
+    margin: 16px 0 8px;
+    color: var(--text);
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .tag-time { background: #e3f2fd; color: var(--accent-blue); }
+  .tag-key { background: #fce4ec; color: var(--primary); }
+  .tag-easy { background: #e8f5e9; color: var(--accent-green); }
+  .highlight-box {
+    background: #fff3e0;
+    border-left: 4px solid var(--accent-orange);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .tip-box {
+    background: #e8f5e9;
+    border-left: 4px solid var(--accent-green);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .warn-box {
+    background: #fce4ec;
+    border-left: 4px solid var(--primary);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .blue-box {
+    background: #e3f2fd;
+    border-left: 4px solid var(--accent-blue);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  ul, ol { padding-left: 24px; }
+  li { margin: 4px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.95em;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    text-align: left;
+  }
+  th { background: #f5f5f5; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: "SF Mono", "Fira Code", monospace;
+  }
+  pre {
+    background: #263238;
+    color: #eeffff;
+    padding: 16px 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 12px 0;
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  .flow-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+    padding: 16px;
+    background: #f5f5f5;
+    border-radius: 8px;
+  }
+  .flow-step {
+    background: var(--card);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-align: center;
+  }
+  .flow-arrow { color: var(--primary); font-size: 1.4em; font-weight: bold; }
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .comp-card {
+    padding: 16px;
+    border-radius: 8px;
+    border: 2px solid;
+  }
+  .comp-before { border-color: #bdbdbd; background: #fafafa; }
+  .comp-after { border-color: var(--accent-green); background: #e8f5e9; }
+  .comp-card h4 { margin-bottom: 8px; }
+  .scenario {
+    background: #f3e5f5;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 12px 0;
+  }
+  .scenario strong { color: var(--accent-purple); }
+  .checklist { list-style: none; padding-left: 4px; }
+  .checklist li { margin: 8px 0; padding-left: 28px; position: relative; }
+  .checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+  }
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+  }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.6em; }
+    .section { padding: 20px 16px; }
+    .comparison { grid-template-columns: 1fr; }
+    .flow-chart { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🦞 OpenClaw（小龙虾）</h1>
+  <div class="subtitle">IGCSE / A-Level 国际学校教师 AI 效率工具培训</div>
+  <div class="meta">让 AI 帮你干活，而不是替你聊天 · 2026年3月</div>
+</div>
+
+<div class="container">
+
+<!-- 目录 -->
+<div class="toc">
+  <h2>📋 培训大纲</h2>
+  <ol>
+    <li><a href="#part1">开场：什么是"小龙虾"？（5分钟）</a></li>
+    <li><a href="#part2">为什么老师需要它？— 真实场景演示（10分钟）</a></li>
+    <li><a href="#part3">安装：三条路线，按需选择（15分钟）</a></li>
+    <li><a href="#part4">配置：给它一个灵魂（10分钟）</a></li>
+    <li><a href="#part5">技能安装：四个必装 + 教师专属推荐（10分钟）</a></li>
+    <li><a href="#part6">连接聊天工具：让它出现在你的手机里（10分钟）</a></li>
+    <li><a href="#part7">定时任务：让它主动帮你干活（5分钟）</a></li>
+    <li><a href="#part8">安全须知（5分钟）</a></li>
+    <li><a href="#part9">Q&A + 动手环节（20分钟）</a></li>
+    <li><a href="#part10">参考资源汇总</a></li>
+  </ol>
+  <div class="highlight-box" style="margin-top:16px;">
+    ⏱ <strong>建议总时长：</strong>90分钟（讲解60分钟 + 实操30分钟）<br>
+    🎯 <strong>目标受众：</strong>IGCSE / A-Level 国际学校老师（中教+外教），零基础起步<br>
+    💡 <strong>核心原则：</strong>能让小龙虾干的，坚决不自己干<br>
+    💻 <strong>环境：</strong>Mac / Windows 均可，可翻墙
+  </div>
+</div>
+
+<!-- Part 1 -->
+<div class="section" id="part1">
+  <h2>🦞 一、什么是"小龙虾"？<span class="tag tag-time">5分钟</span></h2>
+  
+  <h3>一句话解释</h3>
+  <p><strong>OpenClaw（小龙虾）是一个开源的 AI 私人助手框架</strong>，它不只是聊天，还能<strong>真正帮你做事</strong>——发邮件、整理文件、管日程、搜资料、写报告，甚至操控你的电脑。</p>
+  
+  <h3>跟 ChatGPT 的区别</h3>
+  <div class="comparison">
+    <div class="comp-card comp-before">
+      <h4>❌ ChatGPT</h4>
+      <ul>
+        <li>只能在网页/App里聊天</li>
+        <li>聊完关掉就忘了</li>
+        <li>不能操作你的电脑</li>
+        <li>不能连接你的工具</li>
+        <li>你问它才答</li>
+      </ul>
+    </div>
+    <div class="comp-card comp-after">
+      <h4>✅ 小龙虾</h4>
+      <ul>
+        <li>在微信/飞书/钉钉里跟你对话</li>
+        <li>有记忆，越用越懂你</li>
+        <li>能读写文件、操控浏览器</li>
+        <li>能连接邮箱、日历、笔记等</li>
+        <li>能主动帮你做事（定时任务）</li>
+      </ul>
+    </div>
+  </div>
+  
+  <h3>三层架构（简单理解）</h3>
+  <div class="flow-chart">
+    <div class="flow-step">🧠 大脑<br><small>AI大模型<br>（理解+推理）</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">🦞 小龙虾<br><small>Gateway网关<br>（调度中心）</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">🔧 技能Skills<br><small>具体工具<br>（搜索/邮件/文件…）</small></div>
+  </div>
+  <p>大模型是大脑，小龙虾是身体，Skills是手脚。<strong>没有Skills的小龙虾 = 聪明但没有手脚的哲学家。</strong></p>
+</div>
+
+<!-- Part 2 -->
+<div class="section" id="part2">
+  <h2>🎓 二、老师为什么需要它？<span class="tag tag-time">10分钟</span></h2>
+  
+  <h3>国际学校老师的真实工作痛点</h3>
+  
+  <div class="scenario">
+    <strong>📝 场景1：IGCSE / A-Level 作业批改 & 评语生成</strong><br>
+    学生的 IGCSE English Language 写作或 A-Level Essay 发给小龙虾 → 按 Cambridge 评分标准（如 Band Descriptors）自动标注语法、结构、论证问题 → 生成个性化英文评语 → 你只需审核确认。一篇 Essay 评语从 15 分钟缩到 2 分钟。
+  </div>
+  
+  <div class="scenario">
+    <strong>🌍 场景2：IGCSE / A-Level 教案 & 课件翻译</strong><br>
+    "把这份 IGCSE Biology 的中文教案翻译成英文" / "帮我把 A-Level Economics 的英文课件要点整理成中文给家长" → 秒出结果，比 Google 翻译准确得多，而且懂 Cambridge/Edexcel 教育术语。
+  </div>
+  
+  <div class="scenario">
+    <strong>📊 场景3：Report Card & Predicted Grades 自动生成</strong><br>
+    "根据这学期的 IGCSE 模考成绩和课堂表现，帮我生成每个学生的 Report Card 评语" → 批量生成个性化评估，包含学科优势、改进建议和 Predicted Grade 参考 → 格式直接可用。期末不再加班到凌晨。
+  </div>
+  
+  <div class="scenario">
+    <strong>📧 场景4：家校沟通 & 邮件处理</strong><br>
+    自动帮你检查邮箱 → 家长邮件立即通知 → 帮你草拟中英文回复 → "这封邮件帮我用礼貌但坚定的语气回复，告诉家长孩子的 IGCSE Maths 需要在 Paper 4 长题部分加强训练"。
+  </div>
+  
+  <div class="scenario">
+    <strong>📖 场景5：IGCSE / A-Level 备课资料搜集</strong><br>
+    "帮我找 IGCSE Physics 0625 关于 Electromagnetic Spectrum 的教学活动设计" / "搜索 A-Level Chemistry 9701 有机化学的 Past Paper 解题技巧总结" → 同时搜索中英文资源 → 整理成可用的教案框架。
+  </div>
+  
+  <div class="scenario">
+    <strong>📅 场景6：考试日程 & 会议提醒</strong><br>
+    每天早上自动推送：今天几节课、Cambridge 考试倒计时（May/June session）、什么时候开 department meeting、有没有 parent conference → 不再错过任何安排。
+  </div>
+
+  <div class="scenario">
+    <strong>🔧 场景7：Past Paper & Mark Scheme 整理</strong><br>
+    "帮我把 IGCSE Mathematics 0580 最近5年的 Past Paper 考点按章节分类整理" / "总结 A-Level History 9489 Paper 4 的常考 essay 题型" → 快速生成复习资料和教学重点梳理。
+  </div>
+  
+  <div class="scenario">
+    <strong>🎯 场景8：日常效率工具箱</strong><br>
+    查天气、翻译文件、整理 staff meeting 纪要、生成 Open Day 活动文案、帮外教翻译中文通知… 工作+生活全覆盖。
+  </div>
+  
+  <div class="tip-box">
+    💡 <strong>跟 ChatGPT 最大的区别：</strong>ChatGPT 需要你打开网页主动去用。小龙虾直接在你的<strong>微信</strong>里，像同事一样跟你协作。而且它有记忆——上周让它帮你整理的 IGCSE Past Paper 分析，这周它还记得。你可以在微信群里直接 @它。
+  </div>
+</div>
+
+<!-- Part 3 -->
+<div class="section" id="part3">
+  <h2>💻 三、安装：三条路线<span class="tag tag-time">15分钟</span></h2>
+  
+  <h3>路线选择表</h3>
+  <table>
+    <tr>
+      <th>方案</th>
+      <th>适合谁</th>
+      <th>难度</th>
+      <th>成本</th>
+      <th>优缺点</th>
+    </tr>
+    <tr>
+      <td><strong>🅰 云平台一键部署</strong><br>（MiniMax / Kimi）</td>
+      <td>完全不会技术的老师<br>（首选推荐 ⭐）</td>
+      <td>⭐ 极简</td>
+      <td>免费或极低</td>
+      <td>✅ 1分钟搞定<br>✅ 不需要自己的电脑一直开着<br>❌ 不能直接读本地文件</td>
+    </tr>
+    <tr>
+      <td><strong>🅱 阿里云服务器部署</strong></td>
+      <td>想要完整功能的老师</td>
+      <td>⭐⭐ 中等</td>
+      <td>约￥30-50/月</td>
+      <td>✅ 功能完整，24小时在线<br>✅ 有镜像一键部署<br>❌ 需要买云服务器</td>
+    </tr>
+    <tr>
+      <td><strong>🅲 本地电脑安装</strong></td>
+      <td>有闲置电脑/NAS的老师</td>
+      <td>⭐⭐⭐ 需要点耐心</td>
+      <td>免费</td>
+      <td>✅ 完全免费<br>✅ 数据全在自己电脑<br>❌ 电脑需要一直开着</td>
+    </tr>
+  </table>
+  
+  <h3>🅰 推荐路线：云平台一键部署（现场演示）</h3>
+  <div class="highlight-box">
+    <strong>以 MiniMax 为例，全程不到1分钟：</strong>
+    <ol>
+      <li>打开 MiniMax Agent 官网</li>
+      <li>侧边栏找到「MaxClaw」</li>
+      <li>对它说"我想接入到飞书/钉钉"</li>
+      <li>跟着指引操作 → 搞定！</li>
+    </ol>
+  </div>
+  <p><strong>Kimi 也有类似方案</strong>，手机App还能直接用 Kimi Claw。</p>
+  
+  <h3>🅲 本地安装要点（给想折腾的老师）</h3>
+  <div class="blue-box">
+    <strong>系统要求：</strong>
+    <ul>
+      <li>Windows 10+ / macOS / Linux 均可</li>
+      <li>Node.js ≥ v22（安装脚本会自动装）</li>
+      <li>5GB以上磁盘空间</li>
+      <li>稳定网络</li>
+    </ul>
+  </div>
+  <p><strong>一键安装命令（Windows PowerShell）：</strong></p>
+  <pre><code># Windows 先解除脚本限制（重要！否则报红字错误）
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# 然后安装
+npx openclaw@latest</code></pre>
+  
+  <p><strong>Mac/Linux：</strong></p>
+  <pre><code>curl -fsSL https://openclaw.ai/install.sh | bash</code></pre>
+  
+  <div class="warn-box">
+    ⚠️ <strong>Windows常见坑：</strong>90%新手会遇到"系统禁止运行脚本"的红字报错。一定要先运行 <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code> 再安装。
+  </div>
+  
+  <h3>AI模型配置（大脑）</h3>
+  <p>小龙虾需要一个 AI 大模型作为"大脑"。推荐方案：</p>
+  <table>
+    <tr><th>模型</th><th>获取方式</th><th>费用</th><th>推荐度</th></tr>
+    <tr><td>Kimi K2.5</td><td>kimi.moonshot.cn 注册</td><td>有免费额度</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>阿里通义千问</td><td>百炼平台注册</td><td>有免费额度</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>MiniMax</td><td>minimax.chat</td><td>有免费额度</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>GLM-5 (智谱)</td><td>open.bigmodel.cn</td><td>有免费额度</td><td>⭐⭐⭐</td></tr>
+  </table>
+  <div class="tip-box">
+    💡 国内模型都有免费额度，日常使用完全够。不需要花钱买 GPT-4 或 Claude。
+  </div>
+</div>
+
+<!-- Part 4 -->
+<div class="section" id="part4">
+  <h2>🎭 四、配置：给它一个灵魂<span class="tag tag-time">10分钟</span></h2>
+  
+  <div class="highlight-box">
+    <strong>核心原则：</strong>所有配置都可以通过跟小龙虾聊天来完成！<br>
+    不需要自己找文件、改代码。直接说"帮我创建一个 SOUL.md 文件"就行。
+  </div>
+  
+  <h3>必配的两个文件</h3>
+  
+  <h4>1. SOUL.md — 它的性格（三观）</h4>
+  <p>决定 AI 助手的说话方式和行为准则。针对国际学校老师，推荐<strong>双语效率型模板</strong>：</p>
+  <pre><code># SOUL.md
+
+你是小助，一个高效、直接、靠谱的 AI 助手。
+
+## 你的性格
+- 回答问题直奔主题，不说废话
+- 能一句话说清楚的就不用三段话
+- 做事先做再汇报，不要反复问"要不要我做"
+- 可以有自己的想法和建议
+
+## 你的语言能力
+- 默认用中文回复
+- 如果我发英文给你，用英文回复
+- 翻译任务要求准确、地道，注意教育类术语
+- 帮我写英文邮件/评语时，语气要专业但温暖
+
+## 你的规矩
+- 对外操作（发邮件、发消息）必须先问我
+- 对内操作（读文件、查资料、写草稿）大胆做
+- 出了错误主动告诉我
+
+## 你不要做的事
+- 不要每次都说"好的！我来帮你处理"，直接做
+- 不要把简单的事情讲得很复杂</code></pre>
+  
+  <h4>2. USER.md — 你的个人档案</h4>
+  <pre><code># USER.md
+- 名字：王老师（改成你自己的名字）
+- 身份：国际学校教师（IGCSE / A-Level 体系）
+- 学科：IGCSE Mathematics 0580 / A-Level Maths 9709（改成你的学科和代码）
+- 考试局：Cambridge CIE（或 Edexcel、AQA）
+- 时区：Asia/Shanghai
+- 语言：中英双语，日常中文，教学材料和 Report Card 需要英文
+- 沟通偏好：简洁直接
+- 常用场景：备课、批改Essay、写Report Card评语、
+           Past Paper分析、Predicted Grade评估、
+           家校沟通邮件、翻译通知、整理会议纪要</code></pre>
+  
+  <h3>配置前 vs 配置后</h3>
+  <div class="comparison">
+    <div class="comp-card comp-before">
+      <h4>配置前</h4>
+      <p>你："帮我查明天天气"</p>
+      <p>AI："好的！我很高兴能帮助您查询天气信息！明天的天气预计是……"</p>
+    </div>
+    <div class="comp-card comp-after">
+      <h4>配置后</h4>
+      <p>你："帮我查明天天气"</p>
+      <p>AI："王老师，明天上海：多云转晴，18-25°C，适合户外活动。"</p>
+    </div>
+  </div>
+</div>
+
+<!-- Part 5 -->
+<div class="section" id="part5">
+  <h2>🔧 五、技能安装<span class="tag tag-time">10分钟</span></h2>
+  
+  <h3>基础四件套（新手必装）</h3>
+  <table>
+    <tr><th>技能</th><th>作用</th><th>类比</th></tr>
+    <tr>
+      <td><strong>Tavily Search</strong></td>
+      <td>让小龙虾能联网搜索</td>
+      <td>给它装了个浏览器</td>
+    </tr>
+    <tr>
+      <td><strong>Firecrawl</strong></td>
+      <td>让它能读懂网页内容</td>
+      <td>给它戴了副眼镜</td>
+    </tr>
+    <tr>
+      <td><strong>Summarize</strong></td>
+      <td>长文章秒变摘要</td>
+      <td>给它装了个速读器</td>
+    </tr>
+    <tr>
+      <td><strong>Browser</strong></td>
+      <td>让它能操控浏览器</td>
+      <td>给它一双手</td>
+    </tr>
+  </table>
+  
+  <p><strong>安装方式（二选一）：</strong></p>
+  <pre><code># 方式一：直接跟小龙虾说（推荐！）
+"帮我安装 Tavily Search 技能"
+
+# 方式二：命令行
+npx clawhub@latest install tavily-search</code></pre>
+  
+  <h3>教师专属推荐</h3>
+  <table>
+    <tr><th>技能</th><th>教师用途</th></tr>
+    <tr><td><strong>Multi Search Engine</strong></td><td>17个搜索引擎聚合，中文资料搜索更全面（备课神器）</td></tr>
+    <tr><td><strong>Systematic Debugging</strong></td><td>结构化解决问题，遇到技术问题不慌</td></tr>
+    <tr><td><strong>Self-Improving Agent</strong></td><td>它会记住你的纠正，下次不犯同样的错</td></tr>
+    <tr><td><strong>Office Automation</strong></td><td>日程/邮件/文档/数据处理一条龙</td></tr>
+  </table>
+  
+  <h3>安全审计（推荐）</h3>
+  <div class="warn-box">
+    ⚠️ ClawHub 上有 13000+ 个技能，<strong>质量参差不齐</strong>。建议先安装 <strong>Clawsec</strong> 安全审计技能：
+    <pre><code>npx clawhub@latest install clawsec</code></pre>
+    安装后，它会自动扫描你要安装的新技能，给出安全评级：SAFE / CAUTION / DANGEROUS。
+  </div>
+</div>
+
+<!-- Part 6 -->
+<div class="section" id="part6">
+  <h2>📱 六、连接聊天工具<span class="tag tag-time">10分钟</span></h2>
+  
+  <h3>推荐方案</h3>
+  <table>
+    <tr><th>你常用…</th><th>推荐连接</th><th>难度</th><th>适合场景</th></tr>
+    <tr><td><strong>微信</strong></td><td>企业微信（首选 ⭐）</td><td>中等</td><td>日常最方便，跟微信互通</td></tr>
+    <tr><td><strong>Telegram</strong></td><td>Telegram</td><td>⭐ 最简单</td><td>功能最强，5分钟搞定</td></tr>
+    <tr><td>飞书</td><td>飞书</td><td>中等</td><td>学校用飞书的话</td></tr>
+    <tr><td>钉钉</td><td>钉钉</td><td>中等</td><td>学校用钉钉的话</td></tr>
+  </table>
+  
+  <h3>推荐：Telegram 连接（最简单，5分钟）</h3>
+  <div class="flow-chart">
+    <div class="flow-step">Telegram 搜索<br><small>@BotFather</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">发送 /newbot<br><small>创建机器人</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">拿到 Token<br><small>（一串密钥）</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">告诉小龙虾<br><small>自动配置</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">配对完成<br><small>✅</small></div>
+  </div>
+  
+  <div class="tip-box">
+    💡 <strong>连接后的效果：</strong>在微信或 Telegram 里给小龙虾发消息，它就直接回复你。也可以拉进群聊 @它帮忙。就像多了一个随叫随到的助教。
+  </div>
+</div>
+
+<!-- Part 7 -->
+<div class="section" id="part7">
+  <h2>⏰ 七、定时任务（心跳）<span class="tag tag-time">5分钟</span></h2>
+  
+  <p>让小龙虾从"你不叫我不动"变成"主动帮你干活"：</p>
+  
+  <h3>教师实用心跳模板</h3>
+  <p>直接跟小龙虾说：</p>
+  <pre><code>帮我设置心跳任务：
+1. 每天早上7:30 推送今日课表和天气
+2. 每天下午5点 提醒我明天的课和待办
+3. 有家长邮件或学校重要通知时立即通知我
+4. 每周五下午 帮我生成本周教学小结
+5. 没事不要打扰我</code></pre>
+  
+  <div class="highlight-box">
+    <strong>费用提醒：</strong>每次心跳消耗一次API调用（几分钱）。30分钟一次 ≈ 每天48次。用免费额度的模型不用担心这个。
+  </div>
+</div>
+
+<!-- Part 8 -->
+<div class="section" id="part8">
+  <h2>🛡️ 八、安全须知<span class="tag tag-time">5分钟</span><span class="tag tag-key">重要</span></h2>
+  
+  <h3>三件必做的事</h3>
+  <ol>
+    <li>
+      <strong>不要把端口开放到公网</strong><br>
+      确认地址是 <code>127.0.0.1:18789</code>（只有自己能访问），<strong>不要</strong>改成 <code>0.0.0.0</code>
+    </li>
+    <li>
+      <strong>保护好 API Key</strong><br>
+      API Key = 密码。不要截图发群里、不要上传到任何地方
+    </li>
+    <li>
+      <strong>定期更新</strong><br>
+      <code>openclaw update</code> — 至少每两周一次
+    </li>
+  </ol>
+  
+  <div class="warn-box">
+    ⚠️ 全球已有 42,000+ 个小龙虾实例因配置不当暴露在公网，近 1,800 个泄露了 API 密钥和聊天记录。<strong>不要成为其中之一。</strong>
+  </div>
+  
+  <h3>执行审批机制</h3>
+  <p>小龙虾做高风险操作时会<strong>先问你</strong>：</p>
+  <ul>
+    <li><strong>Allow once</strong>（允许一次）— 不确定时选这个</li>
+    <li><strong>Always allow</strong>（永远允许）— 确认安全后选这个</li>
+    <li><strong>Deny</strong>（拒绝）— 感觉不对就拒绝</li>
+  </ul>
+</div>
+
+<!-- Part 9 -->
+<div class="section" id="part9">
+  <h2>🙋 九、Q&A + 动手环节<span class="tag tag-time">20分钟</span></h2>
+  
+  <h3>常见问题预备</h3>
+  
+  <h4>Q: 这跟 ChatGPT 到底有什么不同？</h4>
+  <p>A: ChatGPT 是"你问它答"的网页聊天。小龙虾是真正的<strong>执行助手</strong>——它能操作你的文件、连接你的工具、出现在你的微信/Telegram里、主动帮你做事、还有记忆。你上周让它帮你改的作业模板，这周它还记得。</p>
+  
+  <h4>Q: 要花多少钱？</h4>
+  <p>A: 软件本身免费开源。AI模型用国内免费额度（Kimi/通义千问/MiniMax）够日常使用。如果用云平台一键部署，基本零成本。想用更强的模型（Claude/GPT-4），大约每月几十块。</p>
+  
+  <h4>Q: 我完全不懂技术，能用吗？</h4>
+  <p>A: 能！用云平台方案（MiniMax/Kimi），1分钟就能用上。而且<strong>大部分配置都可以直接跟小龙虾聊天完成</strong>，不需要你写代码。</p>
+  
+  <h4>Q: 数据安全吗？会不会泄露学生信息？</h4>
+  <p>A: 本地部署的数据全在你自己电脑上。但要注意：发给小龙虾的内容会通过AI模型API处理。<strong>建议：不要发送学生身份证号、护照号等隐私数据。</strong>用它来批改作业、备课、翻译、管日程是安全的。</p>
+  
+  <h4>Q: 能帮我翻译和写英文邮件吗？</h4>
+  <p>A: 这是它最擅长的！中英互译、写英文家长信、批改英文作文、翻译学校通知… 比 Google Translate 强很多，它懂教育场景的语境。</p>
+  
+  <h4>Q: Mac 和 Windows 都能用吗？</h4>
+  <p>A: 都可以。本地安装 Mac/Windows/Linux 全支持。云平台方案更简单，跟系统无关。</p>
+  
+  <h3>动手练习建议</h3>
+  <ul class="checklist">
+    <li>选一个方案完成安装（推荐云平台方案）</li>
+    <li>跟小龙虾说"帮我创建 SOUL.md"</li>
+    <li>发一段学生的 IGCSE 英语写作，让它按 Cambridge Band Descriptors 写评语</li>
+    <li>让它帮你把一份中文家长通知翻译成正式英文</li>
+    <li>让它搜索你教的 IGCSE/A-Level 科目的 Past Paper 分析</li>
+    <li>让它帮你生成一份 Report Card 评语模板</li>
+    <li>设置一个定时任务（如每天推送课表+天气+Cambridge考试倒计时）</li>
+  </ul>
+</div>
+
+<!-- Part 10 -->
+<div class="section" id="part10">
+  <h2>📚 十、参考资源汇总</h2>
+  
+  <h3>入门教程</h3>
+  <ul>
+    <li>🔗 爱范儿：<a href="https://www.ifanr.com/1656346" target="_blank">小白指南1分钟搞定</a></li>
+    <li>🔗 腾讯新闻：<a href="https://news.qq.com/rain/a/20260309A02VOS00" target="_blank">装好之后的完整配置指南</a></li>
+    <li>🔗 阿里云：<a href="https://developer.aliyun.com/article/1714770" target="_blank">保姆级部署+52个内置Skill</a></li>
+    <li>🔗 中关村在线：<a href="https://news.zol.com.cn/1154/11545455.html" target="_blank">5分钟无痛上手教程</a></li>
+  </ul>
+  
+  <h3>进阶资源</h3>
+  <ul>
+    <li>🔗 微信公众号「开发者阿橙」：<a href="https://mp.weixin.qq.com/s/S_6GweaJ1KmNbaP84QJSZQ" target="_blank">先装这10个Skills，再谈生产力</a></li>
+    <li>🔗 B站：<a href="https://www.bilibili.com/video/BV1TpAZzeEiZ/" target="_blank">全网最细教学：安装→Skills→多Agent协作</a></li>
+    <li>🔗 B站：<a href="https://www.bilibili.com/video/BV1UqPQzXEmy/" target="_blank">李宏毅：解剖小龙虾，AI Agent原理</a></li>
+    <li>🔗 ClawHub 技能市场：<a href="https://clawhub.ai/" target="_blank">clawhub.ai</a></li>
+    <li>🔗 OpenClaw 官方案例：<a href="https://openclaw.ai/showcase" target="_blank">openclaw.ai/showcase</a></li>
+    <li>🔗 网友用例集合：<a href="https://github.com/hesamsheikh/awesome-openclaw-usecases" target="_blank">awesome-openclaw-usecases</a></li>
+  </ul>
+  
+  <h3>文章来源</h3>
+  <ul>
+    <li>开发者阿橙 —《OpenClaw避坑指南：先装这10个Skills，再谈生产力》</li>
+    <li>爱范儿 —《别在 OpenClaw 上花冤枉钱了》</li>
+    <li>小互 —《装好小龙虾之后：完整配置指南》</li>
+  </ul>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>🦞 OpenClaw 国际学校教师培训 · 2026年3月</p>
+  <p>有问题随时在微信群里问 📱</p>
+</div>
+
+</body>
+</html>
