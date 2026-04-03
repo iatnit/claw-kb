@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding (AI 辅助编程) 的 5 个最佳实践</title>
+<style>
+:root { --bg: #fafafa; --card: #ffffff; --text: #1e293b; --muted: #64748b; --border: #e2e8f0; --accent: #2563eb; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0f172a; --card: #1e293b; --text: #e2e8f0; --muted: #94a3b8; --border: #334155; --accent: #60a5fa; } }
+body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; padding: 20px; }
+.container { max-width: 720px; margin: 40px auto; background: var(--card); padding: 40px; border-radius: 12px; border: 1px solid var(--border); }
+h1 { font-size: 1.6em; margin-bottom: 8px; }
+.meta { color: var(--muted); font-size: 0.85em; margin-bottom: 30px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+h2 { font-size: 1.2em; margin-top: 30px; margin-bottom: 15px; color: var(--accent); }
+p { margin-bottom: 15px; }
+.highlight { background: #fef08a; color: #854d0e; padding: 2px 4px; border-radius: 4px; }
+@media (prefers-color-scheme: dark) { .highlight { background: #422006; color: #fde047; } }
+.back { display: inline-block; margin-bottom: 20px; color: var(--muted); text-decoration: none; font-size: 0.9em; }
+.back:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back">← 返回知识库</a>
+  <h1>Vibe Coding (AI 辅助编程) 的 5 个最佳实践</h1>
+  <div class="meta">日期: 2026-04-03 · 标签: AI编程, 方法论, Vibe Coding</div>
+
+  <p>经过每天 6–7 小时的高强度 AI 辅助编程（Vibe Coding），总结出了以下 5 条“踩坑”经验。核心心法是：<strong>AI 是绝佳的执行引擎，但架构和理解必须由人来掌控。</strong></p>
+
+  <h2>1. 先写文档，再动手代码</h2>
+  <p>不要上来就让 AI 写代码。第一步应该先写 README 或者 <code>Claude.md</code>。边聊边补充项目边界、技术栈和要做什么。这一步是定海神针，不然后期 AI 容易在执行层面自我迷失，乱造轮子。</p>
+
+  <h2>2. 结构先行</h2>
+  <p>在动代码之前，必须由人来梳理整个项目的结构（比如后端分几层，每层做什么，数据流向）。如果省略这一步，最终会变成“哪里报错补哪里”的屎山代码。短期能跑，长期维护极其痛苦。</p>
+
+  <h2>3. 抽象重复工作（Skill化）</h2>
+  <p>写 Commit message、Code Review、整理代码等重复性 Prompt，应该直接收敛成固定的 <strong>Skill</strong> 或封装成 Agent（例如兜底执行的 PonyFlash）。不要每次都去想接哪个模型，而是把需求说清楚，让工具链去跑结果。</p>
+
+  <h2>4. 必须使用 Git 进行高频提交</h2>
+  <p>AI 写代码的粒度很碎，改动频繁。没有版本控制，你很快就会不知道哪一步改对了、哪一步改坏了。小步提交，遇到问题直接回滚，否则 Debug 的过程会成为一场灾难。</p>
+
+  <h2>5. 复杂功能先写 Plan</h2>
+  <p>遇到稍微复杂的功能，先让 AI 把步骤拆解出来，输出一个 <strong>Plan</strong>。计划写得越清晰，跑偏的概率就越低。如果发现思路不对，优先修改 Plan，而不是在错误思路上继续改代码。</p>
+
+  <h2>💡 核心感受</h2>
+  <p>AI 确实能把“执行”做得非常好，但它对整体架构和结构的理解依然有局限性。因此，<strong>Vibe Coding 用得最牛的人，往往是那些本来就非常清楚自己在干什么的人</strong>。AI 只是帮你省掉了手动实现代码的那段时间。</p>
+</div>
+</body>
+</html>
